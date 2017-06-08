@@ -1,5 +1,5 @@
 var ImageMethods = require("../src/methods.js"),
-	resemble = require("resemblejs").resemble,
+	resemble = require("resemblejs"),
 	async = require("async"),
 	_ = require("lodash");
 
