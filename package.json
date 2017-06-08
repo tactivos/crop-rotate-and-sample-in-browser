@@ -1,6 +1,6 @@
 {
-  "name": "image-manipulation",
-  "version": "0.0.4",
+  "name": "@tactivos/image-manipulation",
+  "version": "0.0.5",
   "description": "Library for rotating, cropping, and resizing images within browser",
   "main": "src/methods.js",
   "directories": {
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sfarthin/crop-rotate-and-sample-in-browser.git"
+    "url": "https://github.com/tactivos/crop-rotate-and-sample-in-browser.git"
   },
   "author": "Steve Farthing",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sfarthin/crop-rotate-and-sample-in-browser/issues"
+    "url": "https://github.com/tactivos/crop-rotate-and-sample-in-browser/issues"
   },
   "browserify": {
     "transform": [
@@ -62,7 +62,7 @@
       "android-browser/latest"
     ]
   },
-  "homepage": "https://github.com/sfarthin/crop-rotate-and-sample-in-browser",
+  "homepage": "https://github.com/tactivos/crop-rotate-and-sample-in-browser",
   "dependencies": {
     "async": "^2.4.1",
     "lodash": "^4.17.4"
