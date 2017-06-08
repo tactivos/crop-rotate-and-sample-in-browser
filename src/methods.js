@@ -2,7 +2,10 @@ var EXIF = require("./exif"),
 	BinaryFile = require("./binaryFile"),
 	toBlob = require("./canvas-to-blob"),
 	async = require("async"),
-	_ = require("underscore");
+	each = require("lodash/each"),
+	extend = require("lodash/extend"),
+	union = require("lodash/union"),
+	values = require("lodash/values");
 
 
 var staticMethods = {
@@ -266,19 +269,19 @@ function ImageMethodConstructor(canvas) {
 
 // Make our static methods Chainable
 delete ImageMethodConstructor.prototype.getCanvasFromUrl;
-_.each(staticMethods, function(func, key) {
+each(staticMethods, function(func, key) {
 	ImageMethodConstructor.prototype[key] = function() {
-		this.canvas = func.apply(this, [this.canvas].concat(_.values(arguments)));
+		this.canvas = func.apply(this, [this.canvas].concat(values(arguments)));
 		return this;
 	};
 });
 
 // Lets overwrite these non chainable methods
 ImageMethodConstructor.prototype.toBlob = function() {
-	return staticMethods.toBlob.apply(this, _.union([this.canvas], arguments));
+	return staticMethods.toBlob.apply(this, union([this.canvas], arguments));
 };
 
 // TODO Lets add a wrapper for Camanjs (http://camanjs.com/) methods.
 
 
-module.exports = window.ImageMethods = _.extend(ImageMethodConstructor, staticMethods);
+module.exports = window.ImageMethods = extend(ImageMethodConstructor, staticMethods);
